@@ -64,4 +64,8 @@ pip install -e '.[test]'
 pytest
 ```
 
-MIT License.
+## Community
+
+Contributions, bug reports, and concrete feature proposals are welcome. Please read the [contribution guide](CONTRIBUTING.md), [Code of Conduct](CODE_OF_CONDUCT.md), and [Security Policy](SECURITY.md) first.
+
+The project uses the [MIT License](LICENSE): you may use, modify, distribute, and use the code commercially, provided the copyright and license notice travel with it.
