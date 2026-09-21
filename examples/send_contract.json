@@ -1,0 +1,7 @@
+{
+  "tool": "mailer",
+  "operation": "send",
+  "target": "email:client@example.com",
+  "data_classes": ["personal"],
+  "prompt": "Send the contract to the client."
+}
