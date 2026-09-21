@@ -1,4 +1,9 @@
-destructive_operations: [delete, send, sign, publish, transfer]
-approval_operations: [write, update, create, share]
-sensitive_data: [personal, financial, health, credential, secret]
-external_targets: ["http://", "https://", "email:"]
+version: 1
+tools:
+  document_store: [read, list, search]
+  filesystem: [read, list]
+  mailer: [send]
+  crm: [read, create, update]
+  http: [read, write]
+trusted_domains: []
+external_data_classes: []

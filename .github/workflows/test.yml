@@ -4,13 +4,27 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.12', '3.13']
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-      - run: pip install -e '.[test]'
-      - run: pytest
+          python-version: ${{ matrix.python }}
+      - run: pip install -e '.[test,dev,mcp]'
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: pytest --cov=coolai --cov-report=term-missing
+      - run: coolai check --policy policies/default.yml --bindings examples/bindings.yml
+      - run: coolai simulate examples/scenarios.json --policy policies/default.yml --bindings examples/bindings.yml
+      - run: python -m build

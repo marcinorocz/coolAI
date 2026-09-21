@@ -1,0 +1,40 @@
+name: reusable policy check
+on:
+  workflow_call:
+    inputs:
+      policy:
+        type: string
+        default: policies/default.yml
+      bindings:
+        type: string
+        default: examples/bindings.yml
+      scenarios:
+        type: string
+        default: examples/scenarios.json
+      candidate:
+        type: string
+        default: ""
+permissions:
+  contents: read
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install .
+      - name: Check decisions and reject policy relaxations
+        env:
+          POLICY: ${{ inputs.policy }}
+          BINDINGS: ${{ inputs.bindings }}
+          SCENARIOS: ${{ inputs.scenarios }}
+          CANDIDATE: ${{ inputs.candidate }}
+        shell: bash
+        run: |
+          args=(simulate "$SCENARIOS" --policy "$POLICY" --bindings "$BINDINGS" --fail-on-relaxation)
+          if [[ -n "$CANDIDATE" ]]; then args+=(--compare "$CANDIDATE"); fi
+          coolai "${args[@]}"

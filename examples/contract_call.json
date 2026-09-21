@@ -1,0 +1,1 @@
+{"name":"send_contract","arguments":{"recipient":"email:client@example.com","body":"A fictional demonstration contract."}}

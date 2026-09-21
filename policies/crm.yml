@@ -1,0 +1,5 @@
+version: 1
+tools:
+  crm: [read, create, update]
+trusted_domains: []
+external_data_classes: []
