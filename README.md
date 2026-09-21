@@ -169,4 +169,14 @@ Nieznane operacje są blokowane, istotne zmiany wymagają jednorazowej zgody,
 a symulator pokazuje skutki zmiany polityki przed jej wdrożeniem.
 Zacznij od `coolai demo`; demonstracja nie wysyła wiadomości ani nie zmienia CRM.
 
-Created by [Marcin Orocz](https://github.com/marcinorocz). MIT License.
+## Community
+
+Contributions, bug reports, and concrete feature proposals are welcome. Please
+read the [contribution guide](CONTRIBUTING.md), [Code of Conduct](CODE_OF_CONDUCT.md),
+and [Security Policy](SECURITY.md) first. See [support](SUPPORT.md) for help.
+
+The project uses the [MIT License](LICENSE): you may use, modify, distribute,
+and use the code commercially, provided the copyright and license notice
+travel with it.
+
+Created by [Marcin Orocz](https://github.com/marcinorocz).

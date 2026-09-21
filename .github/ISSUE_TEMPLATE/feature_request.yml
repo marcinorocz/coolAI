@@ -1,0 +1,35 @@
+name: Feature request
+description: Propose a focused improvement to coolAI Gate.
+title: "feature: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: "Start with a real problem. Please do not include sensitive data or proprietary material."
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Who has the problem, and what is difficult today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+      description: Describe a small, testable solution.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Contribution checks
+      options:
+        - label: I searched existing issues.
+          required: true
+        - label: This proposal does not contain secrets, personal data, or confidential material.
+          required: true
