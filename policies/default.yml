@@ -1,0 +1,4 @@
+destructive_operations: [delete, send, sign, publish, transfer]
+approval_operations: [write, update, create, share]
+sensitive_data: [personal, financial, health, credential, secret]
+external_targets: ["http://", "https://", "email:"]
