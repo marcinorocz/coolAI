@@ -1,0 +1,8 @@
+# Illustrative policy: example.com must be replaced with your verified recipient domain.
+version: 1
+tools:
+  document_store: [read, list, search]
+  mailer: [send]
+  crm: [read, create, update]
+trusted_domains: [example.com]
+external_data_classes: [personal]

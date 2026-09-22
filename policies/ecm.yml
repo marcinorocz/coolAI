@@ -1,0 +1,5 @@
+version: 1
+tools:
+  document_store: [read, list, search, publish]
+trusted_domains: []
+external_data_classes: []

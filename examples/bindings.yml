@@ -1,0 +1,33 @@
+read_document:
+  tool: document_store
+  operation: read
+  target: internal://demo/document
+  data_classes: [public]
+  schema:
+    type: object
+    properties: {}
+    additionalProperties: false
+send_contract:
+  tool: mailer
+  operation: send
+  target_argument: recipient
+  data_classes: [personal]
+  schema:
+    type: object
+    properties:
+      recipient: {type: string, maxLength: 254}
+      body: {type: string, maxLength: 10000}
+    required: [recipient, body]
+    additionalProperties: false
+update_customer:
+  tool: crm
+  operation: update
+  target: internal://crm/customer
+  data_classes: [personal]
+  schema:
+    type: object
+    properties:
+      customer_id: {type: integer, minimum: 1}
+      display_name: {type: string, minLength: 1, maxLength: 120}
+    required: [customer_id, display_name]
+    additionalProperties: false

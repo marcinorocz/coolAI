@@ -17,3 +17,10 @@ We will acknowledge a valid report, investigate it privately, and coordinate dis
 ## Scope
 
 This policy covers the code and workflow files in this repository. Do not test against systems, accounts, or data you do not own or have explicit permission to use.
+
+## Deployment status and supported line
+
+The current development line is 0.2.x. It is experimental; no independent security
+audit or production certification has been performed. Read the
+[security model](docs/security-model.md) for trust boundaries, signing-key
+assumptions, deployment requirements and known limitations.

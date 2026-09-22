@@ -33,3 +33,13 @@ Thanks for helping make agentic systems safer and easier to trust.
 - [ ] The change respects the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 By contributing, you agree that your contributions are licensed under the repository's [MIT License](LICENSE).
+
+## Development checks for 0.2
+
+Use Python 3.11+ and install `pip install -e '.[test,dev,mcp]'`.
+Run `ruff check .`, `ruff format --check .` and `pytest` before a pull request.
+
+For enforcement changes, add regression tests proving denied calls never reach
+the dispatch callback. For approval changes, cover modified arguments, expiry,
+replay, concurrent consumption and policy changes. Keep examples fictional.
+Never log raw arguments, responses, prompts, targets, tokens or signing keys.
